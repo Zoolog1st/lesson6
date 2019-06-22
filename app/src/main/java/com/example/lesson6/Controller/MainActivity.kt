@@ -1,7 +1,8 @@
-package com.example.lesson6
+package com.example.lesson6.Controller
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.lesson6.R
 
 class MainActivity : AppCompatActivity() {
 
