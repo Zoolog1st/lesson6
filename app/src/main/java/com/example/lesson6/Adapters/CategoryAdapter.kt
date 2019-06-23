@@ -1,6 +1,7 @@
 package com.example.lesson6.Adapters
 
 import android.content.Context
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,20 +18,16 @@ class CategoryAdapter(context: Context, categories: List<Category>) : BaseAdapte
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val categoryView : View
         val holder : viewHolder
-
         if (convertView == null){
             categoryView = LayoutInflater.from(context).inflate(R.layout.category_list_item, null)
             holder = viewHolder()
             holder.categoryImage = categoryView.findViewById(R.id.categoryImage)
-
             categoryView.tag = holder
         } else {
             holder = convertView.tag as viewHolder
             categoryView = convertView
         }
-
         val category = categories[position]
-
         val resourceId = context.resources.getIdentifier(category.image, "drawable", context.packageName)
         holder.categoryImage?.setImageResource(resourceId)
 
